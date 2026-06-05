@@ -68,7 +68,7 @@ export default function Navbar() {
                 href="/contact"
                 className="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-md"
               >
-                Contact Me
+                Contact Us
               </Link>
             </nav>
 
@@ -125,7 +125,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
               >
-                Contact Me
+                Contact Us
               </Link>
             </div>
           </div>

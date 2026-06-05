@@ -54,7 +54,7 @@ export default function Hero() {
               href="/contact"
               className="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-center transition-all shadow-lg hover:shadow-xl flex items-center justify-center group"
             >
-              Contact Me
+              Contact Us
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

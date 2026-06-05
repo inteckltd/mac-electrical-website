@@ -37,7 +37,7 @@ export default function ServiceCard({
         href={href}
         className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-brand-dark dark:group-hover:text-gray-300 transition-colors"
       >
-        Find out more
+        Request a quote
         <ArrowRight className="ml-2 h-3.5 w-3.5" />
       </Link>
     </div>

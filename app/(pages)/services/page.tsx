@@ -11,6 +11,7 @@ import ServiceCard from "@/app/components/ServiceCard";
 import SlaSection from "@/app/components/SlaSection";
 import CtaSection from "@/app/components/CtaSection";
 import SectionHeader from "@/app/components/SectionHeader";
+import { contactHref } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Services | MAC Electrical Contractors",
@@ -25,7 +26,7 @@ const services = [
     title: "Commercial Maintenance",
     description:
       "Planned preventative maintenance (PPM) and reactive support packages keep your electrical infrastructure in peak condition. We reduce the risk of costly unplanned outages and ensure your facilities remain operational.",
-    href: "/contact",
+    href: contactHref("maintenance"),
   },
   {
     id: "fire-alarms",
@@ -33,7 +34,7 @@ const services = [
     title: "Fire Alarm Systems",
     description:
       "From design through to commissioning and ongoing servicing, we deliver BS5839-compliant fire alarm systems for commercial, educational, and care environments. Regular testing and maintenance reports are included.",
-    href: "/contact",
+    href: contactHref("fire-alarms"),
   },
   {
     id: "emergency-lighting",
@@ -41,7 +42,7 @@ const services = [
     title: "Emergency Lighting",
     description:
       "Correctly installed and regularly tested emergency lighting is a legal requirement. We install, commission, and certify systems to BS EN 1838 and provide full documentation for your compliance records.",
-    href: "/contact",
+    href: contactHref("emergency-lighting"),
   },
   {
     id: "compliance",
@@ -49,7 +50,7 @@ const services = [
     title: "Compliance & Testing",
     description:
       "Electrical Installation Condition Reports (EICR), PAT testing, and ongoing compliance management — all tailored to the specific requirements of schools, care homes, and commercial buildings.",
-    href: "/contact",
+    href: contactHref("compliance"),
   },
   {
     id: "cctv",
@@ -57,7 +58,7 @@ const services = [
     title: "CCTV & Security",
     description:
       "Full design, supply, installation, and maintenance of CCTV and security systems. We work across IP and analogue platforms to deliver reliable surveillance solutions for your premises.",
-    href: "/contact",
+    href: contactHref("cctv"),
   },
   {
     id: "electrical-installation",
@@ -65,7 +66,7 @@ const services = [
     title: "Electrical Installations",
     description:
       "New-build fitouts, refurbishments, and upgrades — our team delivers commercial electrical installations to the highest standard, on time and in compliance with the latest BS7671 wiring regulations.",
-    href: "/contact",
+    href: contactHref("electrical-installation"),
   },
 ];
 

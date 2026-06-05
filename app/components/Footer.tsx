@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
+import { SERVICE_OPTIONS } from "@/lib/services";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -10,12 +11,12 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const serviceLinks = [
-  { label: "Commercial Electrical", href: "/services#maintenance" },
-  { label: "Fire Alarms", href: "/services#fire-alarms" },
-  { label: "Emergency Lighting", href: "/services#emergency-lighting" },
-  { label: "CCTV & Security", href: "/services#cctv" },
-];
+const serviceLinks = SERVICE_OPTIONS.filter((s) => s.slug !== "other").map(
+  (s) => ({
+    label: s.label,
+    href: `/services#${s.slug}`,
+  }),
+);
 
 export default function Footer() {
   return (

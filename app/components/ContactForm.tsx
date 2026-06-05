@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { getServiceLabel, SERVICE_OPTIONS } from "@/lib/services";
 
 export default function ContactForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const preselectedService =
+    getServiceLabel(searchParams.get("service") ?? "") ?? "";
   const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -102,16 +106,15 @@ export default function ContactForm() {
         <select
           id="service"
           name="service"
+          defaultValue={preselectedService}
           className="w-full px-4 py-2.5 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition"
         >
           <option value="">Select a service…</option>
-          <option>Commercial Maintenance / SLA</option>
-          <option>Fire Alarm Systems</option>
-          <option>Emergency Lighting</option>
-          <option>CCTV &amp; Security</option>
-          <option>Compliance &amp; Testing (EICR / PAT)</option>
-          <option>Electrical Installation</option>
-          <option>Other / Not sure</option>
+          {SERVICE_OPTIONS.map(({ label }) => (
+            <option key={label} value={label}>
+              {label}
+            </option>
+          ))}
         </select>
       </div>
 

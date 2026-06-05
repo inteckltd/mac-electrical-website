@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Phone, Mail } from "lucide-react";
 import SectionHeader from "@/app/components/SectionHeader";
 import ContactForm from "@/app/components/ContactForm";
@@ -53,7 +54,9 @@ export default function ContactPage() {
                 heading="Request a Quote or Callback"
                 className="mb-8"
               />
-              <ContactForm />
+              <Suspense>
+                <ContactForm />
+              </Suspense>
             </div>
 
             {/* Contact info */}

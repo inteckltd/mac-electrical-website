@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Building2, Flame, Lightbulb, ShieldCheck } from "lucide-react";
 import Hero from "@/app/components/Hero";
 import ClientLogos from "@/app/components/ClientLogos";
 import ServiceCard from "@/app/components/ServiceCard";
 import SlaSection from "@/app/components/SlaSection";
 import CtaSection from "@/app/components/CtaSection";
 import SectionHeader from "@/app/components/SectionHeader";
-import { contactHref } from "@/lib/services";
+import { SERVICE_PAGES, servicePath } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "MAC Electrical Contractors | Commercial Electrical Services",
@@ -14,36 +13,12 @@ export const metadata: Metadata = {
     "Delivering safe, reliable, and compliant electrical solutions for schools, nursing homes, and commercial properties across the region.",
 };
 
-const services = [
-  {
-    icon: Building2,
-    title: "Commercial Maintenance",
-    description:
-      "Planned preventative maintenance and reactive support to keep your facilities running safely and efficiently.",
-    href: contactHref("maintenance"),
-  },
-  {
-    icon: Flame,
-    title: "Fire Alarm Systems",
-    description:
-      "Design, installation, commissioning, and regular maintenance of commercial fire alarm systems for compliance.",
-    href: contactHref("fire-alarms"),
-  },
-  {
-    icon: Lightbulb,
-    title: "Emergency Lighting",
-    description:
-      "Installation, testing, and certification of emergency lighting systems to ensure safe evacuation routes.",
-    href: contactHref("emergency-lighting"),
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance & Testing",
-    description:
-      "EICR reports, PAT testing, and ongoing compliance management specifically tailored for schools and care homes.",
-    href: contactHref("compliance"),
-  },
-];
+const homeServices = SERVICE_PAGES.slice(0, 4).map((s) => ({
+  icon: s.icon,
+  title: s.title,
+  description: s.overview,
+  href: servicePath(s.slug),
+}));
 
 export default function HomePage() {
   return (
@@ -61,7 +36,7 @@ export default function HomePage() {
             className="mb-16"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((s) => (
+            {homeServices.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}
           </div>

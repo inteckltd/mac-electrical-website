@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Building2,
-  Flame,
-  Lightbulb,
-  ShieldCheck,
-  Camera,
-  Zap,
-} from "lucide-react";
 import ServiceCard from "@/app/components/ServiceCard";
 import SlaSection from "@/app/components/SlaSection";
 import CtaSection from "@/app/components/CtaSection";
 import SectionHeader from "@/app/components/SectionHeader";
-import { contactHref } from "@/lib/services";
+import { SERVICE_PAGES, servicePath } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Services | MAC Electrical Contractors",
@@ -19,56 +11,13 @@ export const metadata: Metadata = {
     "Explore our full range of commercial electrical services — maintenance, fire alarms, emergency lighting, CCTV, and compliance testing.",
 };
 
-const services = [
-  {
-    id: "maintenance",
-    icon: Building2,
-    title: "Commercial Maintenance",
-    description:
-      "Planned preventative maintenance (PPM) and reactive support packages keep your electrical infrastructure in peak condition. We reduce the risk of costly unplanned outages and ensure your facilities remain operational.",
-    href: contactHref("maintenance"),
-  },
-  {
-    id: "fire-alarms",
-    icon: Flame,
-    title: "Fire Alarm Systems",
-    description:
-      "From design through to commissioning and ongoing servicing, we deliver BS5839-compliant fire alarm systems for commercial, educational, and care environments. Regular testing and maintenance reports are included.",
-    href: contactHref("fire-alarms"),
-  },
-  {
-    id: "emergency-lighting",
-    icon: Lightbulb,
-    title: "Emergency Lighting",
-    description:
-      "Correctly installed and regularly tested emergency lighting is a legal requirement. We install, commission, and certify systems to BS EN 1838 and provide full documentation for your compliance records.",
-    href: contactHref("emergency-lighting"),
-  },
-  {
-    id: "compliance",
-    icon: ShieldCheck,
-    title: "Compliance & Testing",
-    description:
-      "Electrical Installation Condition Reports (EICR), PAT testing, and ongoing compliance management — all tailored to the specific requirements of schools, care homes, and commercial buildings.",
-    href: contactHref("compliance"),
-  },
-  {
-    id: "cctv",
-    icon: Camera,
-    title: "CCTV & Security",
-    description:
-      "Full design, supply, installation, and maintenance of CCTV and security systems. We work across IP and analogue platforms to deliver reliable surveillance solutions for your premises.",
-    href: contactHref("cctv"),
-  },
-  {
-    id: "electrical-installation",
-    icon: Zap,
-    title: "Electrical Installations",
-    description:
-      "New-build fitouts, refurbishments, and upgrades — our team delivers commercial electrical installations to the highest standard, on time and in compliance with the latest BS7671 wiring regulations.",
-    href: contactHref("electrical-installation"),
-  },
-];
+const services = SERVICE_PAGES.map((s) => ({
+  id: s.slug,
+  icon: s.icon,
+  title: s.title,
+  description: s.overview,
+  href: servicePath(s.slug),
+}));
 
 export default function ServicesPage() {
   return (
@@ -100,8 +49,8 @@ export default function ServicesPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s) => (
-              <div key={s.id} id={s.id}>
-                <ServiceCard {...s} />
+              <div key={s.id} id={s.id} className="h-full">
+                <ServiceCard {...s} linkLabel="View service" className="h-full" />
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
-import { SERVICE_OPTIONS } from "@/lib/services";
+import { SERVICE_PAGES, servicePath } from "@/lib/services";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -11,12 +11,10 @@ const quickLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const serviceLinks = SERVICE_OPTIONS.filter((s) => s.slug !== "other").map(
-  (s) => ({
-    label: s.label,
-    href: `/services#${s.slug}`,
-  }),
-);
+const serviceLinks = SERVICE_PAGES.map((s) => ({
+  label: s.navLabel,
+  href: servicePath(s.slug),
+}));
 
 export default function Footer() {
   return (

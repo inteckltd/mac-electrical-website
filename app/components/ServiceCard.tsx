@@ -7,6 +7,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   href: string;
+  linkLabel?: string;
   className?: string;
 }
 
@@ -15,12 +16,13 @@ export default function ServiceCard({
   title,
   description,
   href,
+  linkLabel = "Request a quote",
   className,
 }: ServiceCardProps) {
   return (
     <div
       className={cn(
-        "bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border-t-4 border-brand-blue group",
+        "flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow p-8 border-t-4 border-brand-blue group",
         className
       )}
     >
@@ -30,14 +32,14 @@ export default function ServiceCard({
       <h3 className="text-xl font-bold text-brand-dark dark:text-white mb-3">
         {title}
       </h3>
-      <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed flex-1">
         {description}
       </p>
       <Link
         href={href}
-        className="text-brand-blue font-semibold text-sm flex items-center group-hover:text-brand-dark dark:group-hover:text-gray-300 transition-colors"
+        className="mt-auto text-brand-blue font-semibold text-sm flex items-center group-hover:text-brand-dark dark:group-hover:text-gray-300 transition-colors"
       >
-        Request a quote
+        {linkLabel}
         <ArrowRight className="ml-2 h-3.5 w-3.5" />
       </Link>
     </div>

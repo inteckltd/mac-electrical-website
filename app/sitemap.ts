@@ -1,9 +1,17 @@
 import type { MetadataRoute } from "next";
+import { SERVICE_PAGES } from "@/lib/services";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://mac-electrical.co.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const servicePages: MetadataRoute.Sitemap = SERVICE_PAGES.map((s) => ({
+    url: `${baseUrl}/services/${s.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -15,8 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.9,
     },
+    ...servicePages,
     {
       url: `${baseUrl}/testimonials`,
       lastModified: new Date(),

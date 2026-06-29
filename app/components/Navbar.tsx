@@ -1,19 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, Menu, X } from "lucide-react";
+import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
+import { SERVICE_PAGES, servicePath } from "@/lib/services";
 
-const navLinks = [
+const topNavLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "About", href: "/about" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -55,15 +71,62 @@ export default function Navbar() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-600 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              <Link
+                href="/"
+                className="text-gray-600 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+              >
+                Home
+              </Link>
+
+              {/* Services dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setServicesOpen((v) => !v)}
+                  className="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+                  aria-expanded={servicesOpen}
+                  aria-haspopup="true"
                 >
-                  {link.label}
-                </Link>
-              ))}
+                  Services
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {servicesOpen && (
+                  <div className="absolute left-0 top-full mt-2 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 py-2 z-50">
+                    <Link
+                      href="/services"
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-4 py-2 text-sm font-semibold text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 mb-1"
+                    >
+                      All Services
+                    </Link>
+                    {SERVICE_PAGES.map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={servicePath(s.slug)}
+                        onClick={() => setServicesOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-brand-blue transition-colors"
+                      >
+                        {s.navLabel}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {topNavLinks
+                .filter((l) => l.label !== "Home")
+                .map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-600 dark:text-gray-300 hover:text-brand-blue font-medium transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
               <Link
                 href="/contact"
                 className="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-md"
@@ -108,16 +171,66 @@ export default function Navbar() {
               </a>
             </div>
 
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block py-2.5 text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue transition-colors"
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className="block py-2.5 text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue transition-colors"
+            >
+              Home
+            </Link>
+
+            {/* Mobile Services accordion */}
+            <div>
+              <button
+                onClick={() => setMobileServicesOpen((v) => !v)}
+                className="flex items-center justify-between w-full py-2.5 text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue transition-colors"
               >
-                {link.label}
-              </Link>
-            ))}
+                Services
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileServicesOpen && (
+                <div className="pl-4 pb-1 space-y-1 border-l-2 border-brand-blue ml-1">
+                  <Link
+                    href="/services"
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setMobileServicesOpen(false);
+                    }}
+                    className="block py-1.5 text-sm font-semibold text-brand-blue"
+                  >
+                    All Services
+                  </Link>
+                  {SERVICE_PAGES.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={servicePath(s.slug)}
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setMobileServicesOpen(false);
+                      }}
+                      className="block py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-brand-blue transition-colors"
+                    >
+                      {s.navLabel}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {topNavLinks
+              .filter((l) => l.label !== "Home")
+              .map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-2.5 text-gray-700 dark:text-gray-300 font-medium hover:text-brand-blue transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
 
             <div className="pt-3">
               <Link

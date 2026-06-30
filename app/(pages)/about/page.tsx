@@ -4,7 +4,7 @@ import SectionHeader from "@/app/components/SectionHeader";
 import CtaSection from "@/app/components/CtaSection";
 
 export const metadata: Metadata = {
-  title: "About Us | MAC Electrical Contractors",
+  title: "About Us",
   description:
     "Learn about MAC Electrical Contractors — experienced commercial electricians serving schools, care homes, and businesses.",
 };

@@ -5,7 +5,7 @@ import SectionHeader from "@/app/components/SectionHeader";
 import ContactForm from "@/app/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | MAC Electrical Contractors",
+  title: "Contact Us",
   description:
     "Get in touch with MAC Electrical Contractors for a quote or to discuss an SLA.",
 };
@@ -14,14 +14,14 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "07525 336097",
-    href: "tel:07525336097",
+    value: "07896 249965",
+    href: "tel:07896249965",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@mac-electrical.co.uk",
-    href: "mailto:info@mac-electrical.co.uk",
+    value: "tim@mac-electrical.co.uk",
+    href: "mailto:tim@mac-electrical.co.uk",
   },
 ];
 

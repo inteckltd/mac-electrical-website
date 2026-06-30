@@ -12,14 +12,45 @@ export default function ContactForm() {
   const preselectedService =
     getServiceLabel(searchParams.get("service") ?? "") ?? "";
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
-    // TODO: replace with Resend / Formspree API call when ready
-    // e.g. await fetch("/api/contact", { method: "POST", body: new FormData(e.currentTarget) })
-    await new Promise((r) => setTimeout(r, 600)); // brief pause for UX
-    router.push("/contact/thank-you");
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.get("first-name"),
+          lastName: formData.get("last-name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          service: formData.get("service"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(
+          data.error ?? "Something went wrong. Please try again."
+        );
+      }
+
+      router.push("/contact/thank-you");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or call us on 07896 249965."
+      );
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -134,6 +165,12 @@ export default function ContactForm() {
           placeholder="Tell us about your project or requirements…"
         />
       </div>
+
+      {error && (
+        <p role="alert" className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md px-4 py-3">
+          {error}
+        </p>
+      )}
 
       <Button
         type="submit"

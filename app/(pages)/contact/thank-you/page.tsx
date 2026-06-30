@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Message Sent | MAC Electrical Contractors",
+  title: "Message Sent",
   description: "Thank you for getting in touch — we will be in contact shortly.",
   robots: { index: false, follow: false },
 };
@@ -28,11 +28,11 @@ export default function ThankYouPage() {
 
         {/* Call CTA */}
         <a
-          href="tel:07525336097"
+          href="tel:07896249965"
           className="inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg mb-6"
         >
           <Phone className="h-5 w-5" />
-          Call 07525 336097
+          Call 07896 249965
         </a>
 
         <div className="mt-4">

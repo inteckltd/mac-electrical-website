@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | MAC Electrical Contractors",
+  title: "Privacy Policy",
   description:
     "How MAC Electrical Contractors collects, uses, and protects your personal data in accordance with UK GDPR.",
 };
 
-const lastUpdated = "3 June 2026";
+const lastUpdated = "30 June 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -48,10 +48,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="text-gray-600 dark:text-gray-400 mb-6 space-y-1 list-none pl-0">
               <li><strong className="text-gray-800 dark:text-gray-200">Email:</strong>{" "}
-                <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
+                <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
-                <a href="tel:07525336097">07525 336097</a>
+                <a href="tel:07896249965">07896 249965</a>
               </li>
             </ul>
 
@@ -128,7 +128,8 @@ export default function PrivacyPolicyPage() {
               We do not sell or rent your data. We may share it with:
             </p>
             <ul className="text-gray-600 dark:text-gray-400 mb-6 space-y-2 list-disc pl-6">
-              <li>Our website hosting and email service providers, who process data on our behalf under data processing agreements</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Vercel</strong> — our website hosting provider, which may process technical data (such as IP addresses and request logs) as part of serving the site. Vercel operates data centres in Europe and the US and is GDPR-compliant.</li>
+              <li><strong className="text-gray-800 dark:text-gray-200">Postmark (Wildbit LLC)</strong> — our transactional email provider, which processes your contact form submission in order to deliver your enquiry to us. Postmark is GDPR-compliant and operates under a data processing agreement.</li>
               <li>Our accountants or legal advisers where required</li>
               <li>Regulatory bodies or law enforcement agencies where we are legally required to do so</li>
             </ul>
@@ -138,12 +139,20 @@ export default function PrivacyPolicyPage() {
             </p>
 
             {/* 6 */}
-            <h2 className="text-2xl mt-10 mb-4 text-brand-dark dark:text-white">6. Cookies</h2>
+            <h2 className="text-2xl mt-10 mb-4 text-brand-dark dark:text-white">6. Cookies &amp; Analytics</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              This website uses <strong className="text-gray-800 dark:text-gray-200">Vercel Analytics</strong> to
+              help us understand how visitors use the site (for example, which
+              pages are visited and how long is spent on them). Vercel Analytics
+              is designed to be privacy-friendly: it does not use cookies, does
+              not track individuals across sites, and does not collect personally
+              identifiable information. Data is aggregated and used solely to
+              improve the performance and content of this website.
+            </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              This website may use essential cookies required for the site to
-              function correctly. We do not currently use tracking or
-              advertising cookies. If this changes, we will update this policy
-              and request your consent where required by law.
+              We do not use advertising or third-party tracking cookies. If this
+              changes, we will update this policy and request your consent where
+              required by law.
             </p>
 
             {/* 7 */}
@@ -161,7 +170,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               To exercise any of these rights, please contact us at{" "}
-              <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>.
+              <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>.
               We will respond within 30 days. You also have the right to lodge a
               complaint with the{" "}
               <a
@@ -199,10 +208,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="text-gray-600 dark:text-gray-400 mb-10 space-y-1 list-none pl-0">
               <li><strong className="text-gray-800 dark:text-gray-200">Email:</strong>{" "}
-                <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
+                <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
-                <a href="tel:07525336097">07525 336097</a>
+                <a href="tel:07896249965">07896 249965</a>
               </li>
             </ul>
 

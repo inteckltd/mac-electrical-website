@@ -48,7 +48,7 @@ export async function generateMetadata({
   if (!service) return {};
 
   return {
-    title: `${service.title} | MAC Electrical Contractors`,
+    title: service.title,
     description: service.subtitle,
   };
 }

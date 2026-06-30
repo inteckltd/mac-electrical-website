@@ -102,19 +102,19 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="mr-3 h-4 w-4 text-brand-accent shrink-0" />
                 <a
-                  href="tel:07525336097"
+                  href="tel:07896249965"
                   className="hover:text-white transition-colors"
                 >
-                  07525 336097
+                  07896 249965
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-4 w-4 text-brand-accent shrink-0" />
                 <a
-                  href="mailto:info@mac-electrical.co.uk"
+                  href="mailto:tim@mac-electrical.co.uk"
                   className="hover:text-white transition-colors break-all"
                 >
-                  info@mac-electrical.co.uk
+                  tim@mac-electrical.co.uk
                 </a>
               </li>
             </ul>

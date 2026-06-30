@@ -8,7 +8,7 @@ import SectionHeader from "@/app/components/SectionHeader";
 import { SERVICE_PAGES, servicePath } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "MAC Electrical Contractors | Commercial Electrical Services",
+  title: { absolute: "MAC Electrical Contractors | Commercial Electrical Services" },
   description:
     "Delivering safe, reliable, and compliant electrical solutions for schools, nursing homes, and commercial properties across the region.",
 };

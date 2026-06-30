@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="text-gray-600 dark:text-gray-400 mb-6 space-y-1 list-none pl-0">
               <li><strong className="text-gray-800 dark:text-gray-200">Email:</strong>{" "}
-                <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>
+                <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
                 <a href="tel:07896249965">07896 249965</a>
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               To exercise any of these rights, please contact us at{" "}
-              <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>.
+              <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>.
               We will respond within 30 days. You also have the right to lodge a
               complaint with the{" "}
               <a
@@ -208,7 +208,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="text-gray-600 dark:text-gray-400 mb-10 space-y-1 list-none pl-0">
               <li><strong className="text-gray-800 dark:text-gray-200">Email:</strong>{" "}
-                <a href="mailto:tim@mac-electrical.co.uk">tim@mac-electrical.co.uk</a>
+                <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
                 <a href="tel:07896249965">07896 249965</a>

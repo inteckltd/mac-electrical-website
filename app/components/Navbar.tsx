@@ -44,11 +44,11 @@ export default function Navbar() {
             07896 249965
           </a>
           <a
-            href="mailto:tim@mac-electrical.co.uk"
+            href="mailto:info@mac-electrical.co.uk"
             className="flex items-center hover:text-brand-accent transition-colors"
           >
             <Mail className="mr-2 h-4 w-4 text-brand-accent" />
-            tim@mac-electrical.co.uk
+            info@mac-electrical.co.uk
           </a>
         </div>
       </div>
@@ -163,11 +163,11 @@ export default function Navbar() {
                 07896 249965
               </a>
               <a
-                href="mailto:tim@mac-electrical.co.uk"
+                href="mailto:info@mac-electrical.co.uk"
                 className="flex items-center gap-2 hover:text-brand-blue"
               >
                 <Mail className="h-4 w-4 text-brand-accent" />
-                tim@mac-electrical.co.uk
+                info@mac-electrical.co.uk
               </a>
             </div>
 

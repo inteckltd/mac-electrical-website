@@ -111,10 +111,10 @@ export default function Footer() {
               <li className="flex items-center">
                 <Mail className="mr-3 h-4 w-4 text-brand-accent shrink-0" />
                 <a
-                  href="mailto:tim@mac-electrical.co.uk"
+                  href="mailto:info@mac-electrical.co.uk"
                   className="hover:text-white transition-colors break-all"
                 >
-                  tim@mac-electrical.co.uk
+                  info@mac-electrical.co.uk
                 </a>
               </li>
             </ul>

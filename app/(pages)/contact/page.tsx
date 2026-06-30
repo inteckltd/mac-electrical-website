@@ -20,8 +20,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "tim@mac-electrical.co.uk",
-    href: "mailto:tim@mac-electrical.co.uk",
+    value: "info@mac-electrical.co.uk",
+    href: "mailto:info@mac-electrical.co.uk",
   },
 ];
 

@@ -47,7 +47,7 @@ export default function ContactForm() {
       setError(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please try again or call us on 07896 249965."
+          : "Something went wrong. Please try again or call us on 01925 669 777."
       );
       setSubmitting(false);
     }

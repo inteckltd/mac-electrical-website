@@ -24,11 +24,11 @@ export default function CtaSection() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="tel:07896249965"
+            href="tel:01925669777"
             className="bg-white text-brand-blue hover:bg-gray-50 px-8 py-4 rounded-md font-bold text-lg transition-colors flex items-center justify-center shadow-lg"
           >
             <Phone className="mr-2 h-5 w-5" />
-            Call 07896 249965
+            Call 01925 669 777
           </a>
           <Link
             href="/contact"

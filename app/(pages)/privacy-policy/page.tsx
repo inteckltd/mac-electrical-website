@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
                 <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
-                <a href="tel:07896249965">07896 249965</a>
+                <a href="tel:01925669777">01925 669 777</a>
               </li>
             </ul>
 
@@ -211,7 +211,7 @@ export default function PrivacyPolicyPage() {
                 <a href="mailto:info@mac-electrical.co.uk">info@mac-electrical.co.uk</a>
               </li>
               <li><strong className="text-gray-800 dark:text-gray-200">Phone:</strong>{" "}
-                <a href="tel:07896249965">07896 249965</a>
+                <a href="tel:01925669777">01925 669 777</a>
               </li>
             </ul>
 

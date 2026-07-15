@@ -28,11 +28,11 @@ export default function ThankYouPage() {
 
         {/* Call CTA */}
         <a
-          href="tel:07896249965"
+          href="tel:01925669777"
           className="inline-flex items-center gap-2 bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg mb-6"
         >
           <Phone className="h-5 w-5" />
-          Call 07896 249965
+          Call 01925 669 777
         </a>
 
         <div className="mt-4">

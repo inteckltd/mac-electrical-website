@@ -37,11 +37,11 @@ export default function Navbar() {
       <div className="bg-brand-dark text-white py-2 px-4 sm:px-6 lg:px-8 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center space-x-6">
           <a
-            href="tel:07896249965"
+            href="tel:01925669777"
             className="flex items-center hover:text-brand-accent transition-colors"
           >
             <Phone className="mr-2 h-4 w-4 text-brand-accent" />
-            07896 249965
+            01925 669 777
           </a>
           <a
             href="mailto:info@mac-electrical.co.uk"
@@ -156,11 +156,11 @@ export default function Navbar() {
             {/* Contact info */}
             <div className="mb-4 space-y-2 text-sm text-gray-600 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 pb-4">
               <a
-                href="tel:07896249965"
+                href="tel:01925669777"
                 className="flex items-center gap-2 hover:text-brand-blue"
               >
                 <Phone className="h-4 w-4 text-brand-accent" />
-                07896 249965
+                01925 669 777
               </a>
               <a
                 href="mailto:info@mac-electrical.co.uk"

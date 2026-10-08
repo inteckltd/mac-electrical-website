@@ -8,7 +8,7 @@ import { SERVICE_PAGES, servicePath } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore our full range of commercial electrical services — maintenance, fire alarms, emergency lighting, CCTV, and compliance testing.",
+    "Explore our full range of electrical services — commercial maintenance, fire alarms, emergency lighting, CCTV, compliance testing, and domestic electrical work.",
 };
 
 const services = SERVICE_PAGES.map((s) => ({
@@ -32,8 +32,8 @@ export default function ServicesPage() {
             Electrical Services
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            A comprehensive range of electrical services designed around the
-            needs of schools, care homes, and commercial facilities.
+            A comprehensive range of electrical services for homes, landlords,
+            schools, care homes, and commercial facilities.
           </p>
         </div>
       </section>

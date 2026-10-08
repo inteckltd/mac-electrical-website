@@ -5,6 +5,7 @@ import {
   ShieldCheck,
   Camera,
   Zap,
+  Home,
   type LucideIcon,
 } from "lucide-react";
 
@@ -15,6 +16,7 @@ export const SERVICE_OPTIONS = [
   { slug: "cctv", label: "CCTV & Security" },
   { slug: "compliance", label: "Compliance & Testing (EICR / PAT)" },
   { slug: "electrical-installation", label: "Electrical Installation" },
+  { slug: "domestic", label: "Domestic Electrical" },
   { slug: "other", label: "Other / Not sure" },
 ] as const;
 
@@ -164,6 +166,29 @@ export const SERVICE_PAGES: ServicePage[] = [
       "As-installed drawings and full handover documentation",
     ],
     image: "electrical-installation.jpg",
+  },
+  {
+    slug: "domestic",
+    navLabel: "Domestic Electrical",
+    eyebrow: "Homes & Landlords",
+    title: "Domestic Electrical Services",
+    subtitle:
+      "Safe, fully certified electrical work for homeowners and landlords: rewires, consumer unit upgrades, fault finding, lighting, EV chargers and EICRs.",
+    icon: Home,
+    whatWeDoHeading: "Reliable electricians for your home",
+    overview:
+      "Whether you need a full rewire, a new consumer unit, or a straightforward fault traced and fixed, MAC Electrical brings the same qualified, insured engineers we use on commercial sites into your home. All domestic work is carried out to the 18th Edition Wiring Regulations (BS7671), with tidy first and second fix, clear fixed quotes before we start, and the certificates you need at the end. Notifiable work is certified and notified under Part P, so building control, solicitors, and insurers have the paperwork they expect — whether you are a homeowner, a landlord between tenancies, or selling a property.",
+    included: [
+      "Full and partial rewires",
+      "Consumer unit (fuse board) upgrades",
+      "Fault finding and repairs",
+      "Sockets, lighting and outdoor power",
+      "EV charger installation",
+      "Smoke and heat alarm installation",
+      "EICRs for landlords and home sales",
+      "Certificates issued for all notifiable work",
+    ],
+    image: "domestic.jpg",
   },
 ];
 

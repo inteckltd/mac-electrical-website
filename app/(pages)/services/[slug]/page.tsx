@@ -20,12 +20,12 @@ const howWeWorkSteps = [
   {
     number: "02",
     title: "Site survey",
-    body: "We visit your premises to assess the scope of work and provide a clear, competitive quote.",
+    body: "We visit your property to assess the scope of work and provide a clear, competitive quote.",
   },
   {
     number: "03",
     title: "Works carried out",
-    body: "Our qualified engineers complete the work safely and efficiently, with minimal disruption to your operations.",
+    body: "Our qualified engineers complete the work safely and efficiently, with minimal disruption.",
   },
   {
     number: "04",
